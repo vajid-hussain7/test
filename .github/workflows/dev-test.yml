@@ -20,7 +20,7 @@ jobs:
 
       # - name: environment secret
       #   shell: bash
-      #   run: echo ${{secret.DEVJWT}}
+      #   run: echo ${{secrets.DEVJWT}}
 
       - name:  variable
         shell: bash
@@ -28,4 +28,4 @@ jobs:
 
       - name:  secret
         shell: bash
-        run: echo ${{secret.JWT}}
+        run: echo ${{secrets.JWT}}
