@@ -23,10 +23,10 @@ jobs:
         shell: bash
         run: echo ${{secrets.DEVJWT}}
 
-      # - name:  variable
-      #   shell: bash
-      #   run: echo ${{vars.JWTVAIRALBE}}
+      - name:  install
+        shell: bash
+        run: sudo apt install tree
 
-      # - name:  secret
-      #   shell: bash
-      #   run: echo ${{secrets.JWT}}
+      - name:  tree
+        shell: bash
+        run: tree
