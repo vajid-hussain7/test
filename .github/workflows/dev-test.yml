@@ -26,9 +26,12 @@ jobs:
       #   shell: bash
       #   run: go run main.go
 
+      env: 
+        keys: ${{secrets.MYJWT}}
+
       - name: environment secret
         shell: bash
-        run: echo ${{secrets.MYJWT}}
+        run: echo keys
 
       # - name:  install
       #   shell: bash
