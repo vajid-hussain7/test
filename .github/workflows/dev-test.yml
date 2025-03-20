@@ -10,6 +10,26 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: first run
+      - name: pwd run
         shell: bash
-        run: ls
+        run: pwd
+      
+      - name: print workspace
+        shell: bash
+        run: echo ${{github.workspace}}
+
+      - name: print secret
+        shell: bash
+        run: echo ${{something}}
+
+      - name: environment secret
+        shell: bash
+        run: echo ${{develop.DEVJWT}}
+
+      - name:  variable
+        shell: bash
+        run: echo ${{JWTVAIRALBE}}
+
+      - name:  secret
+        shell: bash
+        run: echo ${{JWT}}
