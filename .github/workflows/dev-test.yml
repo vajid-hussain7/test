@@ -19,14 +19,14 @@ jobs:
       #   shell: bash
       #   run: go run main.go
 
-      # - name: environment secret
+      - name: environment secret
+        shell: bash
+        run: echo ${{secrets.DEVJWT}}
+
+      # - name:  install
       #   shell: bash
-      #   run: echo ${{secrets.DEVJWT}}
+      #   run: sudo apt install tree
 
-      - name:  install
-        shell: bash
-        run: sudo apt install tree
-
-      - name:  tree
-        shell: bash
-        run: tree
+      # - name:  tree
+      #   shell: bash
+      #   run: tree
