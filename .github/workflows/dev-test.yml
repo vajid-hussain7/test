@@ -1,6 +1,5 @@
-
 name: test-demo-workflow
-run-name: ${{github.actor}} testing our github action
+run-name: ${{ github.actor }} testing our GitHub action
 on: 
   push: 
     branches: 
@@ -11,22 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     environment: develop
     steps:
-      - name: pwd run
+      - name: Checkout
+        uses: actions/checkout@v4        
+
+      - name: Print Working Directory
         shell: bash
         run: pwd
 
-      - name: checkout
-        uses: actions/checkout@v4        
-
-      - name: pwd run
+      - name: List Files
         shell: bash
         run: ls
 
-      - name: env  assinament
-        env: 
-          keys: ${{secrets.MYJWT}}
-        run: $keys
-
-      - name: environment secret
+      - name: Access Environment Secret
         shell: bash
-        run: echo keys
+        env: 
+          keys: ${{ secrets.MYJWT }}
+        run: echo $keys
