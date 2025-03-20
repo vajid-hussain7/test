@@ -21,7 +21,7 @@ jobs:
 
       - name: environment secret
         shell: bash
-        run: echo ${{secrets.DEVJWT}}
+        run: echo ${{secrets.MYJWT}}
 
       # - name:  install
       #   shell: bash
