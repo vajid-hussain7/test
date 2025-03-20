@@ -9,6 +9,7 @@ on:
 jobs: 
   first-job:
     runs-on: ubuntu-latest
+    environment: develop
     steps:
       - name: pwd run
         shell: bash
@@ -16,16 +17,16 @@ jobs:
       
       - name: print workspace
         shell: bash
-        run: echo ${{github.workspace}}
+        run: go run main.go
 
-      # - name: environment secret
+      - name: environment secret
+        shell: bash
+        run: echo ${{secrets.DEVJWT}}
+
+      # - name:  variable
       #   shell: bash
-      #   run: echo ${{secrets.DEVJWT}}
+      #   run: echo ${{vars.JWTVAIRALBE}}
 
-      - name:  variable
-        shell: bash
-        run: echo ${{vars.JWTVAIRALBE}}
-
-      - name:  secret
-        shell: bash
-        run: echo ${{secrets.JWT}}
+      # - name:  secret
+      #   shell: bash
+      #   run: echo ${{secrets.JWT}}
