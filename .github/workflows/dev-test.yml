@@ -19,9 +19,9 @@ jobs:
       #   shell: bash
       #   run: go run main.go
 
-      - name: environment secret
-        shell: bash
-        run: echo ${{secrets.DEVJWT}}
+      # - name: environment secret
+      #   shell: bash
+      #   run: echo ${{secrets.DEVJWT}}
 
       - name:  install
         shell: bash
